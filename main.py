@@ -15,6 +15,9 @@ class Boy(object):
     """ Класс представляет сущность парня """
 
     def __init__(self, name: str):
+
+        """ Аргумент name заполняется автоматически """
+
         self.name = name
         self.health = consts.START_HEALTH
         self.defence = consts.START_DEFENCE
