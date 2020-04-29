@@ -12,6 +12,8 @@ logging.basicConfig(
 
 class Boy(object):
 
+    """ Класс представляет сущность парня """
+
     def __init__(self, name: str):
         self.name = name
         self.health = consts.START_HEALTH
