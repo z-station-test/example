@@ -13,7 +13,12 @@ logging.basicConfig(
 
 class Member(object):
 
+    """ Класс представляет сущность участника команды """
+
     def __init__(self):
+
+        """ Аргумент name заполняется автоматически """
+
         self.name = self._get_rand_name()
         self.logger = logging.getLogger('class Member')
         self.logger.info(f'Инициализация нового объекта: "{self.name}"')
