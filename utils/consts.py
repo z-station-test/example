@@ -1,2 +1,4 @@
-START_HEALTH = 10
-START_DEFENCE = 0
+NAMES = {
+    1: "Закиров Азат",
+    2: "Шакиров Марат",
+}

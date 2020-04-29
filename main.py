@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+import random
 from utils import conf, consts
 
 
@@ -10,20 +11,21 @@ logging.basicConfig(
 )
 
 
-class Boy(object):
+class Member(object):
 
-    def __init__(self, name: str):
-        self.name = name
-        self.health = consts.START_HEALTH
-        self.defence = consts.START_DEFENCE
+    def __init__(self):
+        self.name = self._get_rand_name()
+        self.logger = logging.getLogger('class Member')
+        self.logger.info(f'Инициализация нового объекта: "{self.name}"')
 
-        self.logger = logging.getLogger('class Boy')
-        self.logger.info(f'Инициализация нового объекта: "{name}"')
+    @staticmethod
+    def _get_rand_name() -> str:
+        key = random.randint(1, len(consts.NAMES))
+        return consts.NAMES[key]
 
     def __str__(self):
         return self.name
 
 
 if __name__ == '__main__':
-    boy = Boy(name='Archer')
-    father = Boy(name='Berserker')
+    member = Member()
